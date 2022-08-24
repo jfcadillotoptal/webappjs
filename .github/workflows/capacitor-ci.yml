@@ -24,7 +24,3 @@ jobs:
             */node_modules
           key: dependency-cache-${{ hashFiles('package.json', '*/package.json') }}
       - run: npm install
-      - id: files
-        uses: imhoffd/get-changed-files@v2
-        with:
-          format: 'json'
