@@ -15,7 +15,7 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@ce177499ccf9fd2aded3b0426c97e5434c2e8a73
         with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
+          access_token: ${{ secrets.SS_TOKEN }}
       - uses: actions/checkout@v2
       - name: Restore Dependency Cache
         id: cache-modules
