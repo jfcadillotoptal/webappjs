@@ -1,4 +1,4 @@
-name: Build Android
+name: Build iOS
 
 on:
   push:
@@ -7,8 +7,25 @@ on:
 
 jobs:
   build:
-    name: Build APK
-    runs-on: ubuntu-latest
+    name: Build IPA
+    runs-on: macos-latest
     steps:
       - name: Checkout source
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install app dependencies
+        run: npm install
+
+      - name: Build Svelte app
+        run: npm run build
+
+      - name: Capacitor update
+        run: npx cap update
+
+      - name: Capacitor copy
+        run: npx cap copy
