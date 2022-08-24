@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build IPA
+    name: Build iOS
     runs-on: macos-latest
     steps:
       - name: Checkout source
