@@ -45,7 +45,7 @@ jobs:
       matrix:
         xcode:
           - xcodebuild-scheme: ['App']
-          - xcodebuild-command: ['build', 'test']
+          - xcodebuild-command: ['build']
     steps:
       - run: xcodebuild ${{ matrix.xcodebuild-command }} -scheme ${{ matrix.xcodebuild-scheme }}
       - uses: actions/setup-node@v1
