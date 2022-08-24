@@ -29,3 +29,4 @@ jobs:
 
       - name: Capacitor copy
         run: npx cap copy
+
