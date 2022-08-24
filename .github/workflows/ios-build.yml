@@ -36,13 +36,17 @@ jobs:
           files: ${{ steps.files.outputs.all }}
 
   verify-ios:
-    runs-on: macos-latest
+    runs-on: macos-12
     if: needs.setup.outputs.plugins != '[]'
     timeout-minutes: 30
     needs:
       - setup
+    strategy:
+      matrix:
+        xcode:
+          - /Applications/Xcode_13.1.app
     steps:
-      - run: xcodebuild build -scheme App
+      - run: sudo xcode-select --switch ${{ matrix.xcode }}
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
