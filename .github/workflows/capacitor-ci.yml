@@ -27,6 +27,8 @@ jobs:
       
   build_with_signing:
     runs-on: macos-latest
+    needs:
+      - setup
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
