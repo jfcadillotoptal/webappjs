@@ -24,7 +24,7 @@ jobs:
             */node_modules
           key: dependency-cache-${{ hashFiles('package.json', '*/package.json') }}
       - run: npm install
-      - run: ng build
+      - run: npm run build 
       
   build_with_signing:
     runs-on: macos-latest
