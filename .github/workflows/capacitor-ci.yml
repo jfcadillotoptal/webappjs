@@ -3,7 +3,7 @@ name: Build iOS
 on:
   push:
     branches:
-      - masterdev
+      - master
 
 jobs:
   setup:
