@@ -41,13 +41,8 @@ jobs:
     timeout-minutes: 30
     needs:
       - setup
-    strategy:
-      matrix:
-        xcode:
-          - xcodebuild-scheme: ['App']
-          - xcodebuild-command: ['build']
     steps:
-      - run: xcodebuild ${{ matrix.xcodebuild-command }} -scheme ${{ matrix.xcodebuild-scheme }}
+      - run: xcodebuild build -scheme App
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
