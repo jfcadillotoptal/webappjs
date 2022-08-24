@@ -44,11 +44,11 @@ jobs:
     strategy:
       matrix:
         xcode:
-            xcodebuild-scheme: ['App']
-            xcodebuild-command: ['build']
+          - xcodebuild-scheme: ['App']
+          - xcodebuild-command: ['build']
     steps:
       - name: Using the xcodebuild to ${{ matrix.xcodebuild-command }} the ${{ matrix.xcodebuild-scheme }} scheme.
-        run: xcodebuild ${{ matrix.xcodebuild-command }} -scheme ${{ matrix.xcodebuild-scheme }}
+      - run: xcodebuild ${{ matrix.xcodebuild-command }} -scheme ${{ matrix.xcodebuild-scheme }}
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
